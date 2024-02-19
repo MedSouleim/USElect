@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            /* font-family: 'Arial', sans-serif; */
+            margin: 10px;
+            background-color: #dfe8f0;
+            width: 90%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: rgb(16, 52, 95);
+        }
+
+        fieldset {
+            border: 1px solid #ced4da;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-left: 40px;
+        }
+
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .texts {
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+        }
+
+        .btnn{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            left: 25%;
+            gap: 30px;
+            top: 30px;
+        }
+
+        #formFileLg{
+            background-color: #e6819a;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #87a5c1;
+            border-radius: 3%;
+        }
+
+        button {
+            background-color: #cb4062;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 15%;
+        }
+
+        button:hover {
+            background-color: #0b3562;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50%;
+        }
+
+        #update {
+            display: flex;
+            background-color: #cb4062;
+            color: #fff;
+            border-radius: 8px;
+            width: 13%;
+            margin-left: 250px;
+            margin-top: 10px;
+        }
+
+        #update:hover {
+            background-color: #0b3562;
+        }
+
+        .bbttnn {
+            position: relative;
+            left: 90%;
+        }
+
+        #logo2 {
+            width: 85%;
+        }
+        .add{
+            display: flex;
+            position: relative;
+            left: 70px;
+            top: 10px;
+            width: 50%;
+        }
+    </style>
+
+    <div class="header">
+        <div>
+            <img src="{{ url_for('static', filename='images/logo_1-removebg-preview.png') }}" alt="logousa.png"
+                id="logo1">
+        </div>
+        <h1 style="text-align: center;">BAN Error</h1>
+        <div>
+            <img src="{{ url_for('static', filename='images/USA.png') }}" alt="logousa.png" id="logo2">
+        </div>
+    </div>
+    <div class="form">
+        <h2>You are Banned, Please contact an admin through the contact section in the main page.</h2>
+    </div>
+</body>
+</html>

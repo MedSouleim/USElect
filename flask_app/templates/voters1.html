@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome Admin</h1>
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Region</th>
+            <th>Age</th>
+            <th>voted</th>
+            <th>Actions</th>
+        </tr>
+        {%for voter in voters%}
+            <tr>
+                <td>{{voter.cin}}</td>
+                <td>{{voter.region}}</td>
+                <td>{{voter.age}}</td>
+                {% if voter.vote == 0 %}
+                    <td>No</td>
+                {% else %}
+                    <td>Yes</td>
+                {% endif %}
+                <td>
+                    <form action="/banned/{{voter.id}}" method="post">
+                        {%if voter.is_banned==1%}
+                            <button >Is_Baned</button>
+                        {%else%}
+                            <button type="submit">ban</button>
+                        {%endif%}
+                    </form>
+                </td>
+            </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>

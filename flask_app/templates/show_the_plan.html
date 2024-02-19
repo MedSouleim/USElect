@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show the candidate informations</title>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <img src="{{ url_for('static', filename='images/logo_1-removebg-preview.png') }}" alt="logousa.png"
+                id="logo1">
+        </div>
+        <h1>Plan of Candidate {{candidate.first_name}} {{candidate.last_name}}</h1>
+        <div>
+            <img src="{{ url_for('static', filename='images/USA.png') }}" alt="logousa.png" id="logo2">
+        </div>
+    </div>
+    <div class="texts">
+        <label for="Bio" style="font-weight: bold;">Bio:</label>
+        <textarea name="bio" cols="40" rows="15" disabled>{{candidate.bio}}</textarea>
+        <label for="Plan" style="font-weight: bold;">Plan:</label>
+        <textarea name="plan" cols="40" rows="15" disabled>{{candidate.plan}}</textarea>
+    </div>
+    <div class="show_img">
+        <img src="{{ url_for('static', filename='images/'+img_src.file) }}" alt="the candidate img" >
+    </div>
+    <div class="both">
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+<style>
+    body {
+        /* font-family: 'Arial', sans-serif; */
+        margin: 10px;
+        background-color: #dfe8f0;
+        width: 90%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .show_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+        max-width: 400px;
+        position: relative;
+        left: 37%;
+    }
+
+    .both {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    h1 {
+        color: rgb(16, 52, 95);
+    }
+
+    fieldset {
+        border: 1px solid #ced4da;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        margin-left: 40px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .texts {
+        display: flex;
+        position: relative;
+        left: 38%;
+        gap: 30px;
+        width: 50%;
+        flex-direction: column;
+    }
+
+
+    #formFileLg {
+        background-color: #e6819a;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 50%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #87a5c1;
+        border-radius: 3%;
+    }
+
+    button {
+        background-color: #cb4062;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    button:hover {
+        background-color: #0b3562;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50%;
+    }
+
+    #update {
+        display: flex;
+        background-color: #cb4062;
+        color: #fff;
+        border-radius: 8px;
+        width: 13%;
+        margin-left: 250px;
+        margin-top: 10px;
+    }
+
+    #update:hover {
+        background-color: #0b3562;
+    }
+
+    .bbttnn {
+        position: relative;
+        left: 90%;
+    }
+
+    #logo2 {
+        width: 85%;
+    }
+</style>
+
+</html>
